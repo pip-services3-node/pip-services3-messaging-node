@@ -3,14 +3,14 @@
 This framework is a part of the [Pip.Services](https://github.com/pip-services/pip-services) project.
 It contains asynchronous communication components:
 
-- [MessageQueue]((https://rawgit.com/pip-services-node/pip-services-messaging-node/master/doc/api/classes/queues.messagequeue.html)
-- [MemoryMessageQueue]((https://rawgit.com/pip-services-node/pip-services-messaging-node/master/doc/api/classes/queues.memorymessagequeue.html)
-- [MemoryMessageQueueFactory]((https://rawgit.com/pip-services-node/pip-services-messaging-node/master/doc/api/classes/queues.memorymessagequeuefactory.html)
+- [MessageQueue](https://pip-services3-node.github.io/pip-services3-messaging-node/classes/queues.messagequeue.html)
+- [MemoryMessageQueue](https://pip-services3-node.github.io/pip-services3-messaging-node/classes/queues.memorymessagequeue.html)
+- [MemoryMessageQueueFactory](https://pip-services3-node.github.io/pip-services3-messaging-node/classes/build.messagequeuefactory.html)
 
 Quick Links:
 
 * [Downloads](https://github.com/pip-services-node/pip-services-messaging-node/blob/master/doc/Downloads.md)
-* [API Reference]()
+* [API Reference](https://pip-services3-node.github.io/pip-services3-messaging-node/globals.html)
 * [Building and Testing](https://github.com/pip-services/pip-services-messaging-node/blob/master/doc/Development.md)
 * [Contributing](https://github.com/pip-services/pip-services-messaging-node/blob/master/doc/Development.md/#contrib)
 
