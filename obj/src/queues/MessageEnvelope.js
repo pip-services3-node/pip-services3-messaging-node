@@ -1,8 +1,8 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
 /** @module queues */
+const _ = require('lodash');
 const pip_services3_commons_node_1 = require("pip-services3-commons-node");
-const util_1 = require("util");
 //TODO: UTF-8 important?
 /**
  * Allows adding additional information to messages. A correlation id, message id, and a message type
@@ -23,7 +23,9 @@ class MessageEnvelope {
     constructor(correlationId, messageType, message) {
         this.correlation_id = correlationId;
         this.message_type = messageType;
-        if (util_1.isString(message))
+        if (message instanceof Buffer)
+            this.message = message;
+        if (_.isString(message))
             this.setMessageAsString(message);
         else
             this.setMessageAsJson(message);

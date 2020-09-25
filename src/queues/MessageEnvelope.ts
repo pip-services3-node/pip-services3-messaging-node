@@ -1,6 +1,8 @@
 /** @module queues */
+const _ = require('lodash');
+
 import { IdGenerator } from 'pip-services3-commons-node';
-import { isString } from 'util';
+
 //TODO: UTF-8 important?
 /**
  * Allows adding additional information to messages. A correlation id, message id, and a message type 
@@ -24,7 +26,10 @@ export class MessageEnvelope {
         this.correlation_id = correlationId;
         this.message_type = messageType;
 
-        if (isString(message)) this.setMessageAsString(message);
+        if (message instanceof Buffer)
+            this.message = message;
+        if (_.isString(message))
+            this.setMessageAsString(message);
         else this.setMessageAsJson(message);
 
         this.message_id = IdGenerator.nextLong();
