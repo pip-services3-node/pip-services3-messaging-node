@@ -22,7 +22,7 @@ class MessageQueueFactory extends pip_services3_components_node_1.Factory {
         });
     }
 }
+exports.MessageQueueFactory = MessageQueueFactory;
 MessageQueueFactory.Descriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "factory", "message-queue", "default", "1.0");
 MessageQueueFactory.MemoryQueueDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
-exports.MessageQueueFactory = MessageQueueFactory;
 //# sourceMappingURL=MessageQueueFactory.js.map

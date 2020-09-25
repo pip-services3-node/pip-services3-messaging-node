@@ -1,5 +1,6 @@
 /** @module queues */
 import { IdGenerator } from 'pip-services3-commons-node';
+import { isString } from 'util';
 //TODO: UTF-8 important?
 /**
  * Allows adding additional information to messages. A correlation id, message id, and a message type 
@@ -19,12 +20,15 @@ export class MessageEnvelope {
      * @param messageType       a string value that defines the message's type.
      * @param message           the data being sent/received.
      */
-	public constructor(correlationId: string, messageType: string, message: any) {
-		this.correlation_id = correlationId;
-		this.message_type = messageType;
-		this.message = message != null ? Buffer.from(message) : null;
+    public constructor(correlationId: string, messageType: string, message: any) {
+        this.correlation_id = correlationId;
+        this.message_type = messageType;
+
+        if (isString(message)) this.setMessageAsString(message);
+        else this.setMessageAsJson(message);
+
         this.message_id = IdGenerator.nextLong();
-	}
+    }
 
     /** The unique business transaction id that is used to trace calls across components. */
     public correlation_id: string;
@@ -43,7 +47,7 @@ export class MessageEnvelope {
     public getReference(): any {
         return this._reference;
     }
-    
+
     /**
      * Sets a lock token reference for this MessageEnvelope.
      * 

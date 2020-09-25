@@ -3,6 +3,8 @@ let async = require('async');
 
 import { IMessageQueue } from '../../src/queues/IMessageQueue';
 import { MessageEnvelope } from '../../src/queues/MessageEnvelope';
+import { expect } from 'chai';
+import { RandomString, IdGenerator } from 'pip-services3-commons-node';
 
 export class MessageQueueFixture {
     private _queue: IMessageQueue;
@@ -224,6 +226,88 @@ export class MessageQueueFixture {
 
                 callback();
             }
+        ], (err) => {
+            this._queue.endListen(null);
+            done();
+        });
+    }
+
+    public testSendAsObject(done) {
+        let envelope: MessageEnvelope = null;
+        let testObj = {
+            id: IdGenerator.nextLong(),
+            name: RandomString.nextString(20, 50)
+        };
+
+        this._queue.beginListen(null, {
+            receiveMessage: (envelop: MessageEnvelope, queue: IMessageQueue, callback: (err: any) => void): void => {
+                envelope = envelop;
+                callback(null);
+            }
+        });
+
+        async.series([
+            (callback) => {
+                setTimeout(() => {
+                    callback();
+                }, 1000);
+            },
+            //  send array of strings 
+            (callback) => {
+                this._queue.sendAsObject('123', 'messagetype', ['string1', 'string2'], callback);
+            },
+            (callback) => {
+                setTimeout(() => {
+                    callback();
+                }, 1000);
+            },
+            (callback) => {
+                assert.isNotNull(envelope);
+                assert.equal('messagetype', envelope.message_type);
+                assert.equal('123', envelope.correlation_id);
+                var message = envelope.getMessageAsJson() as string[];
+                assert.isArray(message);
+                expect(['string1', 'string2']).to.eql(message);
+                callback();
+            },
+            // send string
+            (callback) => {
+                this._queue.sendAsObject('123', 'messagetype', 'string2', callback);
+            },
+            (callback) => {
+                setTimeout(() => {
+                    callback();
+                }, 1000);
+            },
+            (callback) => {
+                assert.isNotNull(envelope);
+                assert.equal('messagetype', envelope.message_type);
+                assert.equal('123', envelope.correlation_id);
+                var message = envelope.getMessageAsString();
+                assert.equal('string2', message);
+                callback();
+            },
+            // send object
+            (callback) => {
+                this._queue.sendAsObject('123', 'messagetype', testObj, callback);
+            },
+            (callback) => {
+                setTimeout(() => {
+                    callback();
+                }, 1000);
+            },
+            (callback) => {
+                assert.isNotNull(envelope);
+                assert.equal('messagetype', envelope.message_type);
+                assert.equal('123', envelope.correlation_id);
+
+                var message = envelope.getMessageAsJson();
+                assert.isNotNull(message);
+                assert.equal(testObj.id, message.id);
+                assert.equal(testObj.name, message.name);
+
+                callback();
+            },
         ], (err) => {
             this._queue.endListen(null);
             done();

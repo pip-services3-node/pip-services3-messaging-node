@@ -51,4 +51,7 @@ suite('MemoryMessageQueue', () => {
         fixture.testOnMessage(done);
     });
 
+    test('Send Message As Object', (done) => {
+        fixture.testSendAsObject(done);
+    });
 });

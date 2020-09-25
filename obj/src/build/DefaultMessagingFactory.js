@@ -22,7 +22,7 @@ class DefaultMessagingFactory extends pip_services3_components_node_1.Factory {
         });
     }
 }
+exports.DefaultMessagingFactory = DefaultMessagingFactory;
 DefaultMessagingFactory.Descriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "factory", "messaging", "default", "1.0");
 DefaultMessagingFactory.MemoryQueueDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
-exports.DefaultMessagingFactory = DefaultMessagingFactory;
 //# sourceMappingURL=DefaultMessagingFactory.js.map
