@@ -4,6 +4,7 @@ const async = require('async');
 
 import { ConnectionParams } from 'pip-services3-components-node';
 import { CredentialParams } from 'pip-services3-components-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 
 import { IMessageReceiver } from './IMessageReceiver';
 import { MessageQueue } from './MessageQueue';
@@ -48,6 +49,7 @@ export class MemoryMessageQueue extends MessageQueue {
     private _opened: boolean = false;
     /** Used to stop the listening process. */
     private _cancel: boolean = false;
+    private _listenInterval: number = 1000;
 
     /**
      * Creates a new instance of the message queue.
@@ -108,6 +110,17 @@ export class MemoryMessageQueue extends MessageQueue {
         this._cancel = false;
 
         callback();
+    }
+    
+    /**
+     * Configures component by passing configuration parameters.
+     * 
+     * @param config    configuration parameters to be set.
+     */
+    public configure(config: ConfigParams): void {
+        super.configure(config);
+
+        this._listenInterval = config.getAsIntegerWithDefault('listen_interval', this._listenInterval);
     }
 
     /**
@@ -400,7 +413,7 @@ export class MemoryMessageQueue extends MessageQueue {
      * @see [[receive]]
      */
     public listen(correlationId: string, receiver: IMessageReceiver): void {
-        let timeoutInterval = 1000;
+        let timeoutInterval = this._listenInterval;
 
         this._logger.trace(null, "Started listening messages at %s", this.toString());
 

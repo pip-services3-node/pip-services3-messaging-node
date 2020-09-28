@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MemoryMessageQueue = void 0;
 /** @module queues */
 /** @hidden */
 const async = require('async');
@@ -52,6 +53,7 @@ class MemoryMessageQueue extends MessageQueue_1.MessageQueue {
         this._opened = false;
         /** Used to stop the listening process. */
         this._cancel = false;
+        this._listenInterval = 1000;
         this._capabilities = new MessagingCapabilities_1.MessagingCapabilities(true, true, true, true, true, true, true, false, true);
     }
     /**
@@ -97,6 +99,15 @@ class MemoryMessageQueue extends MessageQueue_1.MessageQueue {
         this._lockedMessages = {};
         this._cancel = false;
         callback();
+    }
+    /**
+     * Configures component by passing configuration parameters.
+     *
+     * @param config    configuration parameters to be set.
+     */
+    configure(config) {
+        super.configure(config);
+        this._listenInterval = config.getAsIntegerWithDefault('listen_interval', this._listenInterval);
     }
     /**
      * Reads the current number of messages in the queue to be delivered.
@@ -374,7 +385,7 @@ class MemoryMessageQueue extends MessageQueue_1.MessageQueue {
      * @see [[receive]]
      */
     listen(correlationId, receiver) {
-        let timeoutInterval = 1000;
+        let timeoutInterval = this._listenInterval;
         this._logger.trace(null, "Started listening messages at %s", this.toString());
         this._cancel = false;
         async.whilst(() => {

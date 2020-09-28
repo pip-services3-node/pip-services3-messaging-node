@@ -1,5 +1,6 @@
 import { ConnectionParams } from 'pip-services3-components-node';
 import { CredentialParams } from 'pip-services3-components-node';
+import { ConfigParams } from 'pip-services3-commons-node';
 import { IMessageReceiver } from './IMessageReceiver';
 import { MessageQueue } from './MessageQueue';
 import { MessageEnvelope } from './MessageEnvelope';
@@ -40,6 +41,7 @@ export declare class MemoryMessageQueue extends MessageQueue {
     private _opened;
     /** Used to stop the listening process. */
     private _cancel;
+    private _listenInterval;
     /**
      * Creates a new instance of the message queue.
      *
@@ -77,6 +79,12 @@ export declare class MemoryMessageQueue extends MessageQueue {
      * @param callback 			callback function that receives error or null no errors occured.
      */
     clear(correlationId: string, callback: (err?: any) => void): void;
+    /**
+     * Configures component by passing configuration parameters.
+     *
+     * @param config    configuration parameters to be set.
+     */
+    configure(config: ConfigParams): void;
     /**
      * Reads the current number of messages in the queue to be delivered.
      *
