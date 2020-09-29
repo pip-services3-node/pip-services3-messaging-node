@@ -1,6 +1,5 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MemoryMessageQueue = void 0;
 /** @module queues */
 /** @hidden */
 const async = require('async');
