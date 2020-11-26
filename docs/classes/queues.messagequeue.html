@@ -3,7 +3,7 @@
 <head>
 	<meta charset="utf-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
-	<title>MessageQueue | pip-services-messaging-node</title>
+	<title>MessageQueue | pip-services3-messaging-node</title>
 	<meta name="description" content="">
 	<meta name="viewport" content="width=device-width, initial-scale=1">
 	<link rel="stylesheet" href="../assets/css/main.css">
@@ -22,7 +22,7 @@
 						<li class="state loading">Preparing search index...</li>
 						<li class="state failure">The search index is not available</li>
 					</ul>
-					<a href="../index.html" class="title">pip-services-messaging-node</a>
+					<a href="../index.html" class="title">pip-services3-messaging-node</a>
 				</div>
 				<div class="table-cell" id="tsd-widgets">
 					<div id="tsd-filter">
@@ -94,10 +94,10 @@
 					</ul>
 					<h3 id="references">References</h3>
 					<ul>
-						<li><code>*:logger:*:*:1.0</code>           (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/log.ilogger.html" class="external">ILogger</a> components to pass log messages</li>
-						<li><code>*:counters:*:*:1.0</code>         (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/count.icounters.html" class="external">ICounters</a> components to pass collected measurements</li>
-						<li><code>*:discovery:*:*:1.0</code>        (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html" class="external">IDiscovery</a> components to discover connection(s)</li>
-						<li><code>*:credential-store:*:*:1.0</code> (optional) <a href="https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/auth.icredentialstore.html" class="external">ICredentialStore</a> componetns to lookup credential(s)</li>
+						<li><code>*:logger:*:*:1.0</code>           (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/log.ilogger.html" class="external">ILogger</a> components to pass log messages</li>
+						<li><code>*:counters:*:*:1.0</code>         (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/count.icounters.html" class="external">ICounters</a> components to pass collected measurements</li>
+						<li><code>*:discovery:*:*:1.0</code>        (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html" class="external">IDiscovery</a> components to discover connection(s)</li>
+						<li><code>*:credential-store:*:*:1.0</code> (optional) <a href="https://pip-services3-node.github.io/pip-services3-components-node/interfaces/auth.icredentialstore.html" class="external">ICredentialStore</a> componetns to lookup credential(s)</li>
 					</ul>
 				</div>
 			</section>
@@ -118,8 +118,8 @@
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
 					<li><a href="../interfaces/queues.imessagequeue.html" class="tsd-signature-type">IMessageQueue</a></li>
-					<li><span class="tsd-signature-type">IReferenceable</span></li>
-					<li><span class="tsd-signature-type">IConfigurable</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
+					<li><span class="tsd-signature-type">any</span></li>
 				</ul>
 			</section>
 			<section class="tsd-panel-group tsd-index-group">
@@ -186,7 +186,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L55">queues/MessageQueue.ts:55</a></li>
+									<li>Defined in queues/MessageQueue.ts:55</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -218,7 +218,7 @@
 					<div class="tsd-signature tsd-kind-icon">_capabilities<span class="tsd-signature-symbol">:</span> <a href="queues.messagingcapabilities.html" class="tsd-signature-type">MessagingCapabilities</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L55">queues/MessageQueue.ts:55</a></li>
+							<li>Defined in queues/MessageQueue.ts:55</li>
 						</ul>
 					</aside>
 				</section>
@@ -228,7 +228,7 @@
 					<div class="tsd-signature tsd-kind-icon">_connection<wbr>Resolver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ConnectionResolver</span><span class="tsd-signature-symbol"> =&nbsp;new ConnectionResolver()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L51">queues/MessageQueue.ts:51</a></li>
+							<li>Defined in queues/MessageQueue.ts:51</li>
 						</ul>
 					</aside>
 				</section>
@@ -238,7 +238,7 @@
 					<div class="tsd-signature tsd-kind-icon">_counters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CompositeCounters</span><span class="tsd-signature-symbol"> =&nbsp;new CompositeCounters()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L50">queues/MessageQueue.ts:50</a></li>
+							<li>Defined in queues/MessageQueue.ts:50</li>
 						</ul>
 					</aside>
 				</section>
@@ -248,7 +248,7 @@
 					<div class="tsd-signature tsd-kind-icon">_credential<wbr>Resolver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CredentialResolver</span><span class="tsd-signature-symbol"> =&nbsp;new CredentialResolver()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L52">queues/MessageQueue.ts:52</a></li>
+							<li>Defined in queues/MessageQueue.ts:52</li>
 						</ul>
 					</aside>
 				</section>
@@ -258,7 +258,7 @@
 					<div class="tsd-signature tsd-kind-icon">_logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CompositeLogger</span><span class="tsd-signature-symbol"> =&nbsp;new CompositeLogger()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L49">queues/MessageQueue.ts:49</a></li>
+							<li>Defined in queues/MessageQueue.ts:49</li>
 						</ul>
 					</aside>
 				</section>
@@ -268,7 +268,7 @@
 					<div class="tsd-signature tsd-kind-icon">_name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L54">queues/MessageQueue.ts:54</a></li>
+							<li>Defined in queues/MessageQueue.ts:54</li>
 						</ul>
 					</aside>
 				</section>
@@ -285,7 +285,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L255">queues/MessageQueue.ts:255</a></li>
+									<li>Defined in queues/MessageQueue.ts:255</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,7 +344,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#beginlisten">beginListen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L293">queues/MessageQueue.ts:293</a></li>
+									<li>Defined in queues/MessageQueue.ts:293</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -389,7 +389,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L165">queues/MessageQueue.ts:165</a></li>
+									<li>Defined in queues/MessageQueue.ts:165</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -444,7 +444,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L157">queues/MessageQueue.ts:157</a></li>
+									<li>Defined in queues/MessageQueue.ts:157</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -499,7 +499,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L244">queues/MessageQueue.ts:244</a></li>
+									<li>Defined in queues/MessageQueue.ts:244</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -555,7 +555,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L85">queues/MessageQueue.ts:85</a></li>
+									<li>Defined in queues/MessageQueue.ts:85</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -587,7 +587,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#endlisten">endListen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L282">queues/MessageQueue.ts:282</a></li>
+									<li>Defined in queues/MessageQueue.ts:282</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -620,7 +620,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#getcapabilities">getCapabilities</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L78">queues/MessageQueue.ts:78</a></li>
+									<li>Defined in queues/MessageQueue.ts:78</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -644,7 +644,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#getname">getName</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L71">queues/MessageQueue.ts:71</a></li>
+									<li>Defined in queues/MessageQueue.ts:71</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -666,9 +666,8 @@
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
-								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#isopen">isOpen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L109">queues/MessageQueue.ts:109</a></li>
+									<li>Defined in queues/MessageQueue.ts:109</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -692,7 +691,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L274">queues/MessageQueue.ts:274</a></li>
+									<li>Defined in queues/MessageQueue.ts:274</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -737,7 +736,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L263">queues/MessageQueue.ts:263</a></li>
+									<li>Defined in queues/MessageQueue.ts:263</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -792,7 +791,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L117">queues/MessageQueue.ts:117</a></li>
+									<li>Defined in queues/MessageQueue.ts:117</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -847,7 +846,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L147">queues/MessageQueue.ts:147</a></li>
+									<li>Defined in queues/MessageQueue.ts:147</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -914,7 +913,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L206">queues/MessageQueue.ts:206</a></li>
+									<li>Defined in queues/MessageQueue.ts:206</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -973,7 +972,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L216">queues/MessageQueue.ts:216</a></li>
+									<li>Defined in queues/MessageQueue.ts:216</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1038,7 +1037,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L172">queues/MessageQueue.ts:172</a></li>
+									<li>Defined in queues/MessageQueue.ts:172</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1090,7 +1089,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L225">queues/MessageQueue.ts:225</a></li>
+									<li>Defined in queues/MessageQueue.ts:225</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1154,7 +1153,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L235">queues/MessageQueue.ts:235</a></li>
+									<li>Defined in queues/MessageQueue.ts:235</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1216,7 +1215,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L181">queues/MessageQueue.ts:181</a></li>
+									<li>Defined in queues/MessageQueue.ts:181</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1277,7 +1276,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L194">queues/MessageQueue.ts:194</a></li>
+									<li>Defined in queues/MessageQueue.ts:194</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1347,7 +1346,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L97">queues/MessageQueue.ts:97</a></li>
+									<li>Defined in queues/MessageQueue.ts:97</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1378,7 +1377,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in <a href="https://github.com/pip-services-node/pip-services-messaging-node/blob/830c250/src/queues/MessageQueue.ts#L304">queues/MessageQueue.ts:304</a></li>
+									<li>Defined in queues/MessageQueue.ts:304</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1528,6 +1527,9 @@
 					</li>
 					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
 						<a href="../interfaces/queues.imessagereceiver.html" class="tsd-kind-icon">IMessage<wbr>Receiver</a>
+					</li>
+					<li class=" tsd-kind-variable tsd-parent-kind-external-module tsd-is-not-exported">
+						<a href="../modules/queues.html#_" class="tsd-kind-icon">_</a>
 					</li>
 				</ul>
 			</nav>
