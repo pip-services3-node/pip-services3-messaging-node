@@ -182,7 +182,7 @@ export abstract class MessageQueue implements IMessageQueue, IReferenceable, ICo
 
     /**
      * Sends an object into the queue.
-     * Before sending the object is converted into JSON string and wrapped in a [[MessageEnvelop]].
+     * Before sending the object is converted into JSON string and wrapped in a [[MessageEnvelope]].
      * 
      * @param correlationId     (optional) transaction id to trace execution through call chain.
      * @param messageType       a message type

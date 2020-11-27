@@ -13,7 +13,7 @@ import { IMessageReceiver } from './IMessageReceiver';
  * Attempt to call non-supported method will result in NotImplemented exception.
  * To verify if specific method is supported consult with [[MessagingCapabilities]].
  * 
- * @see [[MessageEnvelop]]
+ * @see [[MessageEnvelope]]
  * @see [[MessagingCapabilities]]
  */
 export interface IMessageQueue extends IOpenable, IClosable {
@@ -49,7 +49,7 @@ export interface IMessageQueue extends IOpenable, IClosable {
 
     /**
      * Sends an object into the queue.
-     * Before sending the object is converted into JSON string and wrapped in a [[MessageEnvelop]].
+     * Before sending the object is converted into JSON string and wrapped in a [[MessageEnvelope]].
      * 
      * @param correlationId     (optional) transaction id to trace execution through call chain.
      * @param messageType       a message type
