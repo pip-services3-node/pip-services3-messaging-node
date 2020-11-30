@@ -1,10 +1,10 @@
-# <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Pip.Services Asynchronous Messaging for Node.js
+# <img src="https://uploads-ssl.webflow.com/5ea5d3315186cf5ec60c3ee4/5edf1c94ce4c859f2b188094_logo.svg" alt="Pip.Services Logo" width="200"> <br/> Asynchronous Messaging for Node.js
 
 This module is a part of the [Pip.Services](http://pipservices.org) polyglot microservices toolkit.
 
 The Messaging module contains a set of interfaces and classes for working with message queues, as well as an in-memory message queue implementation. 
 
-This module contains the following packages:
+The module contains the following packages:
 
 - **Build** - in-memory message queue factory
 - **Queues** - contains interfaces for working with message queues, subscriptions for receiving messages from the queue, and an in-memory message queue implementation.
