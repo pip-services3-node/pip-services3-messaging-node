@@ -1,6 +1,6 @@
 {
-    "name": "pip-services3-messaging",
+    "name": "pip-services3-messaging-node",
     "registry": "pipdevs",
     "version": "3.0.4",
-    "build": "0"
+    "build": 0
 }
