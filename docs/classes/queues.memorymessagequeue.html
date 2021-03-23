@@ -150,6 +150,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="queues.memorymessagequeue.html#abandon" class="tsd-kind-icon">abandon</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited"><a href="queues.memorymessagequeue.html#beginlisten" class="tsd-kind-icon">begin<wbr>Listen</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected"><a href="queues.memorymessagequeue.html#checkopen" class="tsd-kind-icon">check<wbr>Open</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="queues.memorymessagequeue.html#clear" class="tsd-kind-icon">clear</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="queues.memorymessagequeue.html#close" class="tsd-kind-icon">close</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-overwrite"><a href="queues.memorymessagequeue.html#complete" class="tsd-kind-icon">complete</a></li>
@@ -227,7 +228,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#_capabilities">_capabilities</a></p>
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:55</li>
+							<li>Defined in queues/MessageQueue.ts:56</li>
 						</ul>
 					</aside>
 				</section>
@@ -238,7 +239,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#_connectionresolver">_connectionResolver</a></p>
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:51</li>
+							<li>Defined in queues/MessageQueue.ts:52</li>
 						</ul>
 					</aside>
 				</section>
@@ -249,7 +250,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#_counters">_counters</a></p>
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:50</li>
+							<li>Defined in queues/MessageQueue.ts:51</li>
 						</ul>
 					</aside>
 				</section>
@@ -260,7 +261,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#_credentialresolver">_credentialResolver</a></p>
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:52</li>
+							<li>Defined in queues/MessageQueue.ts:53</li>
 						</ul>
 					</aside>
 				</section>
@@ -271,7 +272,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#_logger">_logger</a></p>
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:49</li>
+							<li>Defined in queues/MessageQueue.ts:50</li>
 						</ul>
 					</aside>
 				</section>
@@ -282,7 +283,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 					<aside class="tsd-sources">
 						<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#_name">_name</a></p>
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:54</li>
+							<li>Defined in queues/MessageQueue.ts:55</li>
 						</ul>
 					</aside>
 				</section>
@@ -360,7 +361,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#beginlisten">beginListen</a></p>
 								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#beginlisten">beginListen</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:293</li>
+									<li>Defined in queues/MessageQueue.ts:314</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -392,6 +393,39 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+					<a name="checkopen" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> check<wbr>Open</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Open<span class="tsd-signature-symbol">(</span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#checkopen">checkOpen</a></p>
+								<ul>
+									<li>Defined in queues/MessageQueue.ts:160</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks if the queue has been opened</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>correlationId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(optional) transaction id to trace execution through call chain.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>Error if queue wasn&#39;t opened or <code>null</code> otherwise</p>
 						</li>
 					</ul>
 				</section>
@@ -642,7 +676,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#getcapabilities">getCapabilities</a></p>
 								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#getcapabilities">getCapabilities</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:78</li>
+									<li>Defined in queues/MessageQueue.ts:82</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -667,7 +701,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#getname">getName</a></p>
 								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#getname">getName</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:71</li>
+									<li>Defined in queues/MessageQueue.ts:75</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -818,7 +852,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#open">open</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:117</li>
+									<li>Defined in queues/MessageQueue.ts:121</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1311,7 +1345,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#sendasobject">sendAsObject</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:194</li>
+									<li>Defined in queues/MessageQueue.ts:215</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1382,7 +1416,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#setreferences">setReferences</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:97</li>
+									<li>Defined in queues/MessageQueue.ts:101</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1414,7 +1448,7 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 							<aside class="tsd-sources">
 								<p>Inherited from <a href="queues.messagequeue.html">MessageQueue</a>.<a href="queues.messagequeue.html#tostring">toString</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:304</li>
+									<li>Defined in queues/MessageQueue.ts:325</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1439,6 +1473,9 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 						<a href="../modules/build.html">build</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/connect.html">connect</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/index.html">index</a>
 					</li>
 					<li class="current tsd-kind-external-module">
@@ -1448,6 +1485,9 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="queues.callbackmessagereceiver.html" class="tsd-kind-icon">Callback<wbr>Message<wbr>Receiver</a>
+					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
 						<a href="queues.lockedmessage.html" class="tsd-kind-icon">Locked<wbr>Message</a>
 					</li>
@@ -1482,6 +1522,9 @@ queue.receive(<span class="hljs-string">"123"</span>, (err, message) =&gt; {
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited">
 								<a href="queues.memorymessagequeue.html#beginlisten" class="tsd-kind-icon">begin<wbr>Listen</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-inherited tsd-is-protected">
+								<a href="queues.memorymessagequeue.html#checkopen" class="tsd-kind-icon">check<wbr>Open</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-overwrite">
 								<a href="queues.memorymessagequeue.html#clear" class="tsd-kind-icon">clear</a>

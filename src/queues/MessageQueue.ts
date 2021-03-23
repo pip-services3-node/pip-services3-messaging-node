@@ -1,8 +1,9 @@
 /** @module queues */
 /** @hidden */
-var async = require('async');
+const async = require('async');
 
 import { IReferenceable } from 'pip-services3-commons-node';
+import { InvalidStateException } from 'pip-services3-commons-node';
 import { IConfigurable } from 'pip-services3-commons-node';
 import { IReferences } from 'pip-services3-commons-node';
 import { ConfigParams } from 'pip-services3-commons-node';
@@ -58,9 +59,12 @@ export abstract class MessageQueue implements IMessageQueue, IReferenceable, ICo
      * Creates a new instance of the message queue.
      * 
      * @param name  (optional) a queue name
+     * @param capabilities (optional) a capabilities of this message queue
      */
-	public constructor(name?: string) {
+	public constructor(name?: string, capabilities?: MessagingCapabilities) {
         this._name = name;
+        this._capabilities = capabilities
+            || new MessagingCapabilities(false, false, false, false, false, false, false, false, false);
 	}
     
     /**
@@ -147,6 +151,23 @@ export abstract class MessageQueue implements IMessageQueue, IReferenceable, ICo
     protected abstract openWithParams(correlationId: string,
         connection: ConnectionParams, credential: CredentialParams,
         callback: (err: any) => void): void;
+
+    /**
+     * Checks if the queue has been opened
+     * @param correlationId     (optional) transaction id to trace execution through call chain.
+     * @returns Error if queue wasn't opened or <code>null</code> otherwise
+     */
+    protected checkOpen(correlationId: string): any {
+        if (!this.isOpen()) {
+            return new InvalidStateException(
+                correlationId,
+                "NOT_OPENED",
+                "The queue is not opened"
+            );
+        }
+
+        return null;
+    }
 
     /**
 	 * Closes component and frees used resources.

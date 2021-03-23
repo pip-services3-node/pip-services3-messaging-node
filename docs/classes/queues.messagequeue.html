@@ -148,6 +148,7 @@
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messagequeue.html#abandon" class="tsd-kind-icon">abandon</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messagequeue.html#beginlisten" class="tsd-kind-icon">begin<wbr>Listen</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-is-protected"><a href="queues.messagequeue.html#checkopen" class="tsd-kind-icon">check<wbr>Open</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messagequeue.html#clear" class="tsd-kind-icon">clear</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messagequeue.html#close" class="tsd-kind-icon">close</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messagequeue.html#complete" class="tsd-kind-icon">complete</a></li>
@@ -180,13 +181,13 @@
 					<a name="constructor" class="tsd-anchor"></a>
 					<h3>constructor</h3>
 					<ul class="tsd-signatures tsd-kind-constructor tsd-parent-kind-class">
-						<li class="tsd-signature tsd-kind-icon">new <wbr>Message<wbr>Queue<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="queues.messagequeue.html" class="tsd-signature-type">MessageQueue</a></li>
+						<li class="tsd-signature tsd-kind-icon">new <wbr>Message<wbr>Queue<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">?: </span><span class="tsd-signature-type">string</span>, capabilities<span class="tsd-signature-symbol">?: </span><a href="queues.messagingcapabilities.html" class="tsd-signature-type">MessagingCapabilities</a><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="queues.messagequeue.html" class="tsd-signature-type">MessageQueue</a></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:55</li>
+									<li>Defined in queues/MessageQueue.ts:56</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -204,6 +205,14 @@
 										</div>
 									</div>
 								</li>
+								<li>
+									<h5><span class="tsd-flag ts-flagOptional">Optional</span> capabilities: <a href="queues.messagingcapabilities.html" class="tsd-signature-type">MessagingCapabilities</a></h5>
+									<div class="tsd-comment tsd-typography">
+										<div class="lead">
+											<p>(optional) a capabilities of this message queue</p>
+										</div>
+									</div>
+								</li>
 							</ul>
 							<h4 class="tsd-returns-title">Returns <a href="queues.messagequeue.html" class="tsd-signature-type">MessageQueue</a></h4>
 						</li>
@@ -218,7 +227,7 @@
 					<div class="tsd-signature tsd-kind-icon">_capabilities<span class="tsd-signature-symbol">:</span> <a href="queues.messagingcapabilities.html" class="tsd-signature-type">MessagingCapabilities</a></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:55</li>
+							<li>Defined in queues/MessageQueue.ts:56</li>
 						</ul>
 					</aside>
 				</section>
@@ -228,7 +237,7 @@
 					<div class="tsd-signature tsd-kind-icon">_connection<wbr>Resolver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">ConnectionResolver</span><span class="tsd-signature-symbol"> =&nbsp;new ConnectionResolver()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:51</li>
+							<li>Defined in queues/MessageQueue.ts:52</li>
 						</ul>
 					</aside>
 				</section>
@@ -238,7 +247,7 @@
 					<div class="tsd-signature tsd-kind-icon">_counters<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CompositeCounters</span><span class="tsd-signature-symbol"> =&nbsp;new CompositeCounters()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:50</li>
+							<li>Defined in queues/MessageQueue.ts:51</li>
 						</ul>
 					</aside>
 				</section>
@@ -248,7 +257,7 @@
 					<div class="tsd-signature tsd-kind-icon">_credential<wbr>Resolver<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CredentialResolver</span><span class="tsd-signature-symbol"> =&nbsp;new CredentialResolver()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:52</li>
+							<li>Defined in queues/MessageQueue.ts:53</li>
 						</ul>
 					</aside>
 				</section>
@@ -258,7 +267,7 @@
 					<div class="tsd-signature tsd-kind-icon">_logger<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">CompositeLogger</span><span class="tsd-signature-symbol"> =&nbsp;new CompositeLogger()</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:49</li>
+							<li>Defined in queues/MessageQueue.ts:50</li>
 						</ul>
 					</aside>
 				</section>
@@ -268,7 +277,7 @@
 					<div class="tsd-signature tsd-kind-icon">_name<span class="tsd-signature-symbol">:</span> <span class="tsd-signature-type">string</span></div>
 					<aside class="tsd-sources">
 						<ul>
-							<li>Defined in queues/MessageQueue.ts:54</li>
+							<li>Defined in queues/MessageQueue.ts:55</li>
 						</ul>
 					</aside>
 				</section>
@@ -285,7 +294,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:255</li>
+									<li>Defined in queues/MessageQueue.ts:276</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -344,7 +353,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#beginlisten">beginListen</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:293</li>
+									<li>Defined in queues/MessageQueue.ts:314</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -379,6 +388,38 @@
 						</li>
 					</ul>
 				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+					<a name="checkopen" class="tsd-anchor"></a>
+					<h3><span class="tsd-flag ts-flagProtected">Protected</span> check<wbr>Open</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+						<li class="tsd-signature tsd-kind-icon">check<wbr>Open<span class="tsd-signature-symbol">(</span>correlationId<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in queues/MessageQueue.ts:160</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Checks if the queue has been opened</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>correlationId: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>(optional) transaction id to trace execution through call chain.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">any</span></h4>
+							<p>Error if queue wasn&#39;t opened or <code>null</code> otherwise</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="clear" class="tsd-anchor"></a>
 					<h3><span class="tsd-flag ts-flagAbstract">Abstract</span> clear</h3>
@@ -389,7 +430,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:165</li>
+									<li>Defined in queues/MessageQueue.ts:186</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -444,7 +485,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:157</li>
+									<li>Defined in queues/MessageQueue.ts:178</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -499,7 +540,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:244</li>
+									<li>Defined in queues/MessageQueue.ts:265</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -555,7 +596,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:85</li>
+									<li>Defined in queues/MessageQueue.ts:89</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -587,7 +628,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#endlisten">endListen</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:282</li>
+									<li>Defined in queues/MessageQueue.ts:303</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -620,7 +661,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#getcapabilities">getCapabilities</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:78</li>
+									<li>Defined in queues/MessageQueue.ts:82</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -644,7 +685,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#getname">getName</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:71</li>
+									<li>Defined in queues/MessageQueue.ts:75</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -667,7 +708,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:109</li>
+									<li>Defined in queues/MessageQueue.ts:113</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -691,7 +732,7 @@
 							<aside class="tsd-sources">
 								<p>Implementation of <a href="../interfaces/queues.imessagequeue.html">IMessageQueue</a>.<a href="../interfaces/queues.imessagequeue.html#listen">listen</a></p>
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:274</li>
+									<li>Defined in queues/MessageQueue.ts:295</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -736,7 +777,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:263</li>
+									<li>Defined in queues/MessageQueue.ts:284</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -791,7 +832,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:117</li>
+									<li>Defined in queues/MessageQueue.ts:121</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -846,7 +887,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:147</li>
+									<li>Defined in queues/MessageQueue.ts:151</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -913,7 +954,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:206</li>
+									<li>Defined in queues/MessageQueue.ts:227</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -972,7 +1013,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:216</li>
+									<li>Defined in queues/MessageQueue.ts:237</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1037,7 +1078,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:172</li>
+									<li>Defined in queues/MessageQueue.ts:193</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1089,7 +1130,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:225</li>
+									<li>Defined in queues/MessageQueue.ts:246</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1153,7 +1194,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:235</li>
+									<li>Defined in queues/MessageQueue.ts:256</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1215,7 +1256,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:181</li>
+									<li>Defined in queues/MessageQueue.ts:202</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1276,7 +1317,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:194</li>
+									<li>Defined in queues/MessageQueue.ts:215</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1346,7 +1387,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:97</li>
+									<li>Defined in queues/MessageQueue.ts:101</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1377,7 +1418,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageQueue.ts:304</li>
+									<li>Defined in queues/MessageQueue.ts:325</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -1402,6 +1443,9 @@
 						<a href="../modules/build.html">build</a>
 					</li>
 					<li class=" tsd-kind-external-module">
+						<a href="../modules/connect.html">connect</a>
+					</li>
+					<li class=" tsd-kind-external-module">
 						<a href="../modules/index.html">index</a>
 					</li>
 					<li class="current tsd-kind-external-module">
@@ -1411,6 +1455,9 @@
 			</nav>
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="queues.callbackmessagereceiver.html" class="tsd-kind-icon">Callback<wbr>Message<wbr>Receiver</a>
+					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
 						<a href="queues.lockedmessage.html" class="tsd-kind-icon">Locked<wbr>Message</a>
 					</li>
@@ -1451,6 +1498,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="queues.messagequeue.html#beginlisten" class="tsd-kind-icon">begin<wbr>Listen</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-is-protected">
+								<a href="queues.messagequeue.html#checkopen" class="tsd-kind-icon">check<wbr>Open</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="queues.messagequeue.html#clear" class="tsd-kind-icon">clear</a>

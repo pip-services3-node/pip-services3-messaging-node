@@ -8,3 +8,4 @@ export { MessageEnvelope } from './MessageEnvelope';
 export { MessagingCapabilities } from './MessagingCapabilities';
 export { MessageQueue } from './MessageQueue';
 export { MemoryMessageQueue } from './MemoryMessageQueue';
+export { CallbackMessageReceiver } from './CallbackMessageReceiver';

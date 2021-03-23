@@ -100,8 +100,9 @@ export class MessageEnvelope {
      * @see [[getMessageAsJson]]
      */
     public setMessageAsJson(value: any): void {
-        if (value == null) this.message = null;
-        else {
+        if (value == null) {
+            this.message = null;
+        } else {
             let temp = JSON.stringify(value);
             this.message = Buffer.from(temp, 'utf8');
         }
@@ -117,7 +118,7 @@ export class MessageEnvelope {
      * @returns the generated string.
      */
     public toString(): string {
-        var builder = '[';
+        let builder = '[';
         builder += this.correlation_id || "---";
         builder += ',';
         builder += this.message_type || "---";

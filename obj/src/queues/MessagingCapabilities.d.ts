@@ -32,53 +32,53 @@ export declare class MessagingCapabilities {
      *
      * @returns true if queue supports reading message count.
      */
-    readonly canMessageCount: boolean;
+    get canMessageCount(): boolean;
     /**
      * Informs if the queue is able to send messages.
      *
      * @returns true if queue is able to send messages.
      */
-    readonly canSend: boolean;
+    get canSend(): boolean;
     /**
      * Informs if the queue is able to receive messages.
      *
      * @returns true if queue is able to receive messages.
      */
-    readonly canReceive: boolean;
+    get canReceive(): boolean;
     /**
      * Informs if the queue is able to peek messages.
      *
      * @returns true if queue is able to peek messages.
      */
-    readonly canPeek: boolean;
+    get canPeek(): boolean;
     /**
      * Informs if the queue is able to peek multiple messages in one batch.
      *
      * @returns true if queue is able to peek multiple messages in one batch.
      */
-    readonly canPeekBatch: boolean;
+    get canPeekBatch(): boolean;
     /**
      * Informs if the queue is able to renew message lock.
      *
      * @returns true if queue is able to renew message lock.
      */
-    readonly canRenewLock: boolean;
+    get canRenewLock(): boolean;
     /**
      * Informs if the queue is able to abandon messages.
      *
      * @returns true if queue is able to abandon.
      */
-    readonly canAbandon: boolean;
+    get canAbandon(): boolean;
     /**
      * Informs if the queue is able to send messages to dead letter queue.
      *
      * @returns true if queue is able to send messages to dead letter queue.
      */
-    readonly canDeadLetter: boolean;
+    get canDeadLetter(): boolean;
     /**
      * Informs if the queue can be cleared.
      *
      * @returns true if queue can be cleared.
      */
-    readonly canClear: boolean;
+    get canClear(): boolean;
 }

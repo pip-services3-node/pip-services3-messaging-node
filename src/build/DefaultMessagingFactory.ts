@@ -3,6 +3,7 @@ import { Factory } from 'pip-services3-components-node';
 import { Descriptor } from 'pip-services3-commons-node';
 
 import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
+import { MessageQueueFactory } from './MessageQueueFactory';
 
 /**
  * Creates [[MemoryMessageQueue]] components by their descriptors.
@@ -12,8 +13,8 @@ import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
  * @see [[MemoryMessageQueue]]
  */
 export class DefaultMessagingFactory extends Factory {
-	public static readonly Descriptor: Descriptor = new Descriptor("pip-services", "factory", "messaging", "default", "1.0");
-    public static readonly MemoryQueueDescriptor: Descriptor = new Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
+    private static readonly MemoryQueueDescriptor: Descriptor = new Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
+    private static readonly MemoryQueueFactoryDescriptor: Descriptor = new Descriptor("pip-services", "queue-factory", "memory", "*", "1.0");
 
     /**
 	 * Create a new instance of the factory.
@@ -21,7 +22,9 @@ export class DefaultMessagingFactory extends Factory {
     public constructor() {
         super();
         this.register(DefaultMessagingFactory.MemoryQueueDescriptor, (locator: Descriptor) => {
-            return new MemoryMessageQueue(locator.getName());
+            let name = (typeof locator.getName === "function") ? locator.getName() : null; 
+            return new MemoryMessageQueue(name);
         });
+        this.registerAsType(DefaultMessagingFactory.MemoryQueueFactoryDescriptor, MessageQueueFactory);
     }
 }

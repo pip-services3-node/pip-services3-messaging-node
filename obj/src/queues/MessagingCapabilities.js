@@ -1,6 +1,7 @@
 "use strict";
 /** @module queues */
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MessagingCapabilities = void 0;
 /**
  * Data object that contains supported capabilities of a message queue.
  * If certain capability is not supported a queue will throw NotImplemented exception.

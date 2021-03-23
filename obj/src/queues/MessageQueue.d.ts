@@ -33,10 +33,10 @@ import { MessageEnvelope } from './MessageEnvelope';
  *
  * ### References ###
  *
- * - <code>\*:logger:\*:\*:1.0</code>           (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/log.ilogger.html ILogger]] components to pass log messages
- * - <code>\*:counters:\*:\*:1.0</code>         (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/count.icounters.html ICounters]] components to pass collected measurements
- * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/connect.idiscovery.html IDiscovery]] components to discover connection(s)
- * - <code>\*:credential-store:\*:\*:1.0</code> (optional) [[https://rawgit.com/pip-services-node/pip-services3-components-node/master/doc/api/interfaces/auth.icredentialstore.html ICredentialStore]] componetns to lookup credential(s)
+ * - <code>\*:logger:\*:\*:1.0</code>           (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/log.ilogger.html ILogger]] components to pass log messages
+ * - <code>\*:counters:\*:\*:1.0</code>         (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/count.icounters.html ICounters]] components to pass collected measurements
+ * - <code>\*:discovery:\*:\*:1.0</code>        (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/connect.idiscovery.html IDiscovery]] components to discover connection(s)
+ * - <code>\*:credential-store:\*:\*:1.0</code> (optional) [[https://pip-services3-node.github.io/pip-services3-components-node/interfaces/auth.icredentialstore.html ICredentialStore]] componetns to lookup credential(s)
  */
 export declare abstract class MessageQueue implements IMessageQueue, IReferenceable, IConfigurable {
     protected _logger: CompositeLogger;
@@ -49,8 +49,9 @@ export declare abstract class MessageQueue implements IMessageQueue, IReferencea
      * Creates a new instance of the message queue.
      *
      * @param name  (optional) a queue name
+     * @param capabilities (optional) a capabilities of this message queue
      */
-    constructor(name?: string);
+    constructor(name?: string, capabilities?: MessagingCapabilities);
     /**
      * Gets the queue name
      *
@@ -98,6 +99,12 @@ export declare abstract class MessageQueue implements IMessageQueue, IReferencea
      */
     protected abstract openWithParams(correlationId: string, connection: ConnectionParams, credential: CredentialParams, callback: (err: any) => void): void;
     /**
+     * Checks if the queue has been opened
+     * @param correlationId     (optional) transaction id to trace execution through call chain.
+     * @returns Error if queue wasn't opened or <code>null</code> otherwise
+     */
+    protected checkOpen(correlationId: string): any;
+    /**
      * Closes component and frees used resources.
      *
      * @param correlationId 	(optional) transaction id to trace execution through call chain.
@@ -127,7 +134,7 @@ export declare abstract class MessageQueue implements IMessageQueue, IReferencea
     abstract send(correlationId: string, envelope: MessageEnvelope, callback?: (err: any) => void): void;
     /**
      * Sends an object into the queue.
-     * Before sending the object is converted into JSON string and wrapped in a [[MessageEnvelop]].
+     * Before sending the object is converted into JSON string and wrapped in a [[MessageEnvelope]].
      *
      * @param correlationId     (optional) transaction id to trace execution through call chain.
      * @param messageType       a message type

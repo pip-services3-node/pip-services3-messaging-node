@@ -1,6 +1,10 @@
 /** @module build */
 import { Factory } from 'pip-services3-components-node';
 import { Descriptor } from 'pip-services3-commons-node';
+import { ConfigParams } from 'pip-services3-commons-node';
+import { IConfigurable } from 'pip-services3-commons-node';
+import { IReferences } from 'pip-services3-commons-node';
+import { IReferenceable } from 'pip-services3-commons-node';
 
 import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
 
@@ -11,9 +15,10 @@ import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
  * @see [[https://pip-services3-node.github.io/pip-services3-components-node/classes/build.factory.html Factory]]
  * @see [[MemoryMessageQueue]]
  */
-export class MessageQueueFactory extends Factory {
-	public static readonly Descriptor: Descriptor = new Descriptor("pip-services", "factory", "message-queue", "default", "1.0");
-    public static readonly MemoryQueueDescriptor: Descriptor = new Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
+export class MessageQueueFactory extends Factory implements IConfigurable, IReferenceable {
+    private static readonly MemoryQueueDescriptor: Descriptor = new Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
+    private _config: ConfigParams;
+    private _references: IReferences;
 
     /**
 	 * Create a new instance of the factory.
@@ -21,7 +26,35 @@ export class MessageQueueFactory extends Factory {
     public constructor() {
         super();
         this.register(MessageQueueFactory.MemoryQueueDescriptor, (locator: Descriptor) => {
-            return new MemoryMessageQueue(locator.getName());
+            let name = (typeof locator.getName === "function") ? locator.getName() : null; 
+            let queue = new MemoryMessageQueue(name);
+
+            if (this._config != null) {
+                queue.configure(this._config);
+            }
+            if (this._references != null) {
+                queue.setReferences(this._references);
+            }
+
+            return queue;
         });
+    }
+
+    /**
+     * Configures component by passing configuration parameters.
+     * 
+     * @param config    configuration parameters to be set.
+     */
+     public configure(config: ConfigParams): void {
+        this._config = config;
+    }
+
+    /**
+	 * Sets references to dependent components.
+	 * 
+	 * @param references 	references to locate the component dependencies. 
+     */
+     public setReferences(references: IReferences): void {
+        this._references = references;
     }
 }

@@ -1,5 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
+exports.MessageEnvelope = void 0;
 /** @module queues */
 const _ = require('lodash');
 const pip_services3_commons_node_1 = require("pip-services3-commons-node");
@@ -81,8 +82,9 @@ class MessageEnvelope {
      * @see [[getMessageAsJson]]
      */
     setMessageAsJson(value) {
-        if (value == null)
+        if (value == null) {
             this.message = null;
+        }
         else {
             let temp = JSON.stringify(value);
             this.message = Buffer.from(temp, 'utf8');
@@ -98,7 +100,7 @@ class MessageEnvelope {
      * @returns the generated string.
      */
     toString() {
-        var builder = '[';
+        let builder = '[';
         builder += this.correlation_id || "---";
         builder += ',';
         builder += this.message_type || "---";
