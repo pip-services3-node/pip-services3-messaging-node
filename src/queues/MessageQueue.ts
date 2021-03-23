@@ -119,13 +119,13 @@ export abstract class MessageQueue implements IMessageQueue, IReferenceable, ICo
      * @param callback 			callback function that receives error or null no errors occured.
      */
     public open(correlationId: string, callback?: (err: any) => void): void {
-        let connection: ConnectionParams;
+        let connections: ConnectionParams[];
         let credential: CredentialParams;
 
         async.series([
             (callback) => {
-                this._connectionResolver.resolve(correlationId, (err: any, result: ConnectionParams) => {
-                    connection = result;
+                this._connectionResolver.resolveAll(correlationId, (err: any, result: ConnectionParams[]) => {
+                    connections = result;
                     callback(err);
                 });
             },
@@ -137,7 +137,7 @@ export abstract class MessageQueue implements IMessageQueue, IReferenceable, ICo
             }
         ])
 
-        this.openWithParams(correlationId, connection, credential, callback);
+        this.openWithParams(correlationId, connections, credential, callback);
     }
 
     /**
@@ -149,7 +149,7 @@ export abstract class MessageQueue implements IMessageQueue, IReferenceable, ICo
      * @param callback 			callback function that receives error or null no errors occured.
      */
     protected abstract openWithParams(correlationId: string,
-        connection: ConnectionParams, credential: CredentialParams,
+        connections: ConnectionParams[], credential: CredentialParams,
         callback: (err: any) => void): void;
 
     /**

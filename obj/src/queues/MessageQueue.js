@@ -95,12 +95,12 @@ class MessageQueue {
      * @param callback 			callback function that receives error or null no errors occured.
      */
     open(correlationId, callback) {
-        let connection;
+        let connections;
         let credential;
         async.series([
             (callback) => {
-                this._connectionResolver.resolve(correlationId, (err, result) => {
-                    connection = result;
+                this._connectionResolver.resolveAll(correlationId, (err, result) => {
+                    connections = result;
                     callback(err);
                 });
             },
@@ -111,7 +111,7 @@ class MessageQueue {
                 });
             }
         ]);
-        this.openWithParams(correlationId, connection, credential, callback);
+        this.openWithParams(correlationId, connections, credential, callback);
     }
     /**
      * Checks if the queue has been opened

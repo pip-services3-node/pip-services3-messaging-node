@@ -60,11 +60,11 @@ export declare class MemoryMessageQueue extends MessageQueue {
      * Opens the component with given connection and credential parameters.
      *
      * @param correlationId     (optional) transaction id to trace execution through call chain.
-     * @param connection        connection parameters
+     * @param connections        connection parameters
      * @param credential        credential parameters
      * @param callback 			callback function that receives error or null no errors occured.
      */
-    protected openWithParams(correlationId: string, connection: ConnectionParams, credential: CredentialParams, callback: (err: any) => void): void;
+    protected openWithParams(correlationId: string, connections: ConnectionParams[], credential: CredentialParams, callback: (err: any) => void): void;
     /**
      * Closes component and frees used resources.
      *
