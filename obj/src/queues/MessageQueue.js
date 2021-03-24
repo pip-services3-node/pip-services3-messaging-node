@@ -76,6 +76,7 @@ class MessageQueue {
         this._logger.configure(config);
         this._connectionResolver.configure(config);
         this._credentialResolver.configure(config);
+        this._name = config.getAsStringWithDefault("queue", this._name);
     }
     /**
      * Sets references to dependent components.
