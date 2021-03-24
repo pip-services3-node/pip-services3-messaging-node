@@ -11,7 +11,7 @@ import { IReferenceable } from 'pip-services3-commons-node';
  * @see [[https://pip-services3-node.github.io/pip-services3-components-node/classes/build.factory.html Factory]]
  * @see [[MemoryMessageQueue]]
  */
-export declare class MessageQueueFactory extends Factory implements IConfigurable, IReferenceable {
+export declare class MemoryMessageQueueFactory extends Factory implements IConfigurable, IReferenceable {
     private static readonly MemoryQueueDescriptor;
     private _config;
     private _references;

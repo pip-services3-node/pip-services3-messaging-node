@@ -1,6 +1,6 @@
 "use strict";
 Object.defineProperty(exports, "__esModule", { value: true });
-exports.MessageQueueFactory = void 0;
+exports.MemoryMessageQueueFactory = void 0;
 /** @module build */
 const pip_services3_components_node_1 = require("pip-services3-components-node");
 const pip_services3_commons_node_1 = require("pip-services3-commons-node");
@@ -12,13 +12,13 @@ const MemoryMessageQueue_1 = require("../queues/MemoryMessageQueue");
  * @see [[https://pip-services3-node.github.io/pip-services3-components-node/classes/build.factory.html Factory]]
  * @see [[MemoryMessageQueue]]
  */
-class MessageQueueFactory extends pip_services3_components_node_1.Factory {
+class MemoryMessageQueueFactory extends pip_services3_components_node_1.Factory {
     /**
      * Create a new instance of the factory.
      */
     constructor() {
         super();
-        this.register(MessageQueueFactory.MemoryQueueDescriptor, (locator) => {
+        this.register(MemoryMessageQueueFactory.MemoryQueueDescriptor, (locator) => {
             let name = (typeof locator.getName === "function") ? locator.getName() : null;
             let queue = new MemoryMessageQueue_1.MemoryMessageQueue(name);
             if (this._config != null) {
@@ -47,6 +47,6 @@ class MessageQueueFactory extends pip_services3_components_node_1.Factory {
         this._references = references;
     }
 }
-exports.MessageQueueFactory = MessageQueueFactory;
-MessageQueueFactory.MemoryQueueDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
-//# sourceMappingURL=MessageQueueFactory.js.map
+exports.MemoryMessageQueueFactory = MemoryMessageQueueFactory;
+MemoryMessageQueueFactory.MemoryQueueDescriptor = new pip_services3_commons_node_1.Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
+//# sourceMappingURL=MemoryMessageQueueFactory.js.map

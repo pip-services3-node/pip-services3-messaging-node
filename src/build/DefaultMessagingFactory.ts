@@ -3,7 +3,7 @@ import { Factory } from 'pip-services3-components-node';
 import { Descriptor } from 'pip-services3-commons-node';
 
 import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
-import { MessageQueueFactory } from './MessageQueueFactory';
+import { MemoryMessageQueueFactory } from './MemoryMessageQueueFactory';
 
 /**
  * Creates [[MemoryMessageQueue]] components by their descriptors.
@@ -25,6 +25,6 @@ export class DefaultMessagingFactory extends Factory {
             let name = (typeof locator.getName === "function") ? locator.getName() : null; 
             return new MemoryMessageQueue(name);
         });
-        this.registerAsType(DefaultMessagingFactory.MemoryQueueFactoryDescriptor, MessageQueueFactory);
+        this.registerAsType(DefaultMessagingFactory.MemoryQueueFactoryDescriptor, MemoryMessageQueueFactory);
     }
 }

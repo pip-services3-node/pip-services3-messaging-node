@@ -15,7 +15,7 @@ import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
  * @see [[https://pip-services3-node.github.io/pip-services3-components-node/classes/build.factory.html Factory]]
  * @see [[MemoryMessageQueue]]
  */
-export class MessageQueueFactory extends Factory implements IConfigurable, IReferenceable {
+export class MemoryMessageQueueFactory extends Factory implements IConfigurable, IReferenceable {
     private static readonly MemoryQueueDescriptor: Descriptor = new Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
     private _config: ConfigParams;
     private _references: IReferences;
@@ -25,7 +25,7 @@ export class MessageQueueFactory extends Factory implements IConfigurable, IRefe
 	 */
     public constructor() {
         super();
-        this.register(MessageQueueFactory.MemoryQueueDescriptor, (locator: Descriptor) => {
+        this.register(MemoryMessageQueueFactory.MemoryQueueDescriptor, (locator: Descriptor) => {
             let name = (typeof locator.getName === "function") ? locator.getName() : null; 
             let queue = new MemoryMessageQueue(name);
 
