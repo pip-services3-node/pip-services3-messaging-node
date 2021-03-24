@@ -74,4 +74,17 @@ export declare class MessageEnvelope {
      * @returns the generated string.
      */
     toString(): string;
+    /**
+     * Converts this MessageEnvelop to a JSON string.
+     * The message payload is passed as base64 string
+     * @returns A JSON encoded representation is this object.
+     */
+    toJSON(): any;
+    /**
+     * Converts a JSON string into a MessageEnvelop
+     * The message payload is passed as base64 string
+     * @param value a JSON encoded string
+     * @returns a decoded Message Envelop.
+     */
+    static fromJSON(value: string): MessageEnvelope;
 }

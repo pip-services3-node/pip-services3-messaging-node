@@ -2,6 +2,8 @@
 const _ = require('lodash');
 
 import { IdGenerator } from 'pip-services3-commons-node';
+import { StringConverter } from 'pip-services3-commons-node';
+import { DateTimeConverter } from 'pip-services3-commons-node';
 
 //TODO: UTF-8 important?
 /**
@@ -126,6 +128,44 @@ export class MessageEnvelope {
         builder += this.message ? this.message.toString('utf8', 0, 50) : "---";
         builder += ']';
         return builder;
+    }
+
+    /**
+     * Converts this MessageEnvelop to a JSON string.
+     * The message payload is passed as base64 string
+     * @returns A JSON encoded representation is this object.
+     */
+    public toJSON(): any {
+        let payload = this.message != null ? this.message.toString('base64') : null;
+        let json = {
+            message_id: this.message_id,
+            correlation_id: this.correlation_id,
+            message_type: this.message_type,
+            sent_time: StringConverter.toString(this.sent_time || new Date()),
+            message: payload
+        };
+        //return JSON.stringify(json);
+        return json;
+    }
+
+    /**
+     * Converts a JSON string into a MessageEnvelop
+     * The message payload is passed as base64 string
+     * @param value a JSON encoded string
+     * @returns a decoded Message Envelop.
+     */
+    public static fromJSON(value: string): MessageEnvelope {
+        if (value == null) return null;
+
+        let json = JSON.parse(value);
+        if (json == null) return null;
+
+        let message = new MessageEnvelope(json.correlation_id, json.message_type, null);
+        message.message_id = json.message_id;
+        message.message = json.message != null ? Buffer.from(json.message, 'base64') : null;
+        message.sent_time = DateTimeConverter.toNullableDateTime(json.sent_time);
+
+        return message;
     }
 
 }

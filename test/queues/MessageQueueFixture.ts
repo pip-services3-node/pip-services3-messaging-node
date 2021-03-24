@@ -1,9 +1,8 @@
-let assert = require('chai').assert;
+const assert = require('chai').assert;
 const async = require('async');
 
 import { IMessageQueue } from '../../src/queues/IMessageQueue';
 import { MessageEnvelope } from '../../src/queues/MessageEnvelope';
-import { expect } from 'chai';
 import { RandomString, IdGenerator } from 'pip-services3-commons-node';
 
 export class MessageQueueFixture {
@@ -267,7 +266,7 @@ export class MessageQueueFixture {
                 assert.equal('123', envelope.correlation_id);
                 var message = envelope.getMessageAsJson() as string[];
                 assert.isArray(message);
-                expect(['string1', 'string2']).to.eql(message);
+                assert.includeMembers(message, ['string1', 'string2']);
                 callback();
             },
             // send string

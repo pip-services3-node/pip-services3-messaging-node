@@ -4,6 +4,8 @@ exports.MessageEnvelope = void 0;
 /** @module queues */
 const _ = require('lodash');
 const pip_services3_commons_node_1 = require("pip-services3-commons-node");
+const pip_services3_commons_node_2 = require("pip-services3-commons-node");
+const pip_services3_commons_node_3 = require("pip-services3-commons-node");
 //TODO: UTF-8 important?
 /**
  * Allows adding additional information to messages. A correlation id, message id, and a message type
@@ -108,6 +110,41 @@ class MessageEnvelope {
         builder += this.message ? this.message.toString('utf8', 0, 50) : "---";
         builder += ']';
         return builder;
+    }
+    /**
+     * Converts this MessageEnvelop to a JSON string.
+     * The message payload is passed as base64 string
+     * @returns A JSON encoded representation is this object.
+     */
+    toJSON() {
+        let payload = this.message != null ? this.message.toString('base64') : null;
+        let json = {
+            message_id: this.message_id,
+            correlation_id: this.correlation_id,
+            message_type: this.message_type,
+            sent_time: pip_services3_commons_node_2.StringConverter.toString(this.sent_time || new Date()),
+            message: payload
+        };
+        //return JSON.stringify(json);
+        return json;
+    }
+    /**
+     * Converts a JSON string into a MessageEnvelop
+     * The message payload is passed as base64 string
+     * @param value a JSON encoded string
+     * @returns a decoded Message Envelop.
+     */
+    static fromJSON(value) {
+        if (value == null)
+            return null;
+        let json = JSON.parse(value);
+        if (json == null)
+            return null;
+        let message = new MessageEnvelope(json.correlation_id, json.message_type, null);
+        message.message_id = json.message_id;
+        message.message = json.message != null ? Buffer.from(json.message, 'base64') : null;
+        message.sent_time = pip_services3_commons_node_3.DateTimeConverter.toNullableDateTime(json.sent_time);
+        return message;
     }
 }
 exports.MessageEnvelope = MessageEnvelope;
