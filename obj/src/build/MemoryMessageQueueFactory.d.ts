@@ -4,6 +4,8 @@ import { ConfigParams } from 'pip-services3-commons-node';
 import { IConfigurable } from 'pip-services3-commons-node';
 import { IReferences } from 'pip-services3-commons-node';
 import { IReferenceable } from 'pip-services3-commons-node';
+import { IMessageQueue } from '../queues/IMessageQueue';
+import { IMessageQueueFactory } from './IMessageQueueFactory';
 /**
  * Creates [[MemoryMessageQueue]] components by their descriptors.
  * Name of created message queue is taken from its descriptor.
@@ -11,7 +13,7 @@ import { IReferenceable } from 'pip-services3-commons-node';
  * @see [[https://pip-services3-node.github.io/pip-services3-components-node/classes/build.factory.html Factory]]
  * @see [[MemoryMessageQueue]]
  */
-export declare class MemoryMessageQueueFactory extends Factory implements IConfigurable, IReferenceable {
+export declare class MemoryMessageQueueFactory extends Factory implements IMessageQueueFactory, IConfigurable, IReferenceable {
     private static readonly MemoryQueueDescriptor;
     private _config;
     private _references;
@@ -31,4 +33,9 @@ export declare class MemoryMessageQueueFactory extends Factory implements IConfi
      * @param references 	references to locate the component dependencies.
      */
     setReferences(references: IReferences): void;
+    /**
+     * Creates a message queue component and assigns its name.
+     * @param name a name of the created message queue.
+     */
+    createQueue(name: string): IMessageQueue;
 }

@@ -7,6 +7,8 @@ import { IReferences } from 'pip-services3-commons-node';
 import { IReferenceable } from 'pip-services3-commons-node';
 
 import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
+import { IMessageQueue } from '../queues/IMessageQueue';
+import { IMessageQueueFactory } from './IMessageQueueFactory';
 
 /**
  * Creates [[MemoryMessageQueue]] components by their descriptors.
@@ -15,7 +17,7 @@ import { MemoryMessageQueue } from '../queues/MemoryMessageQueue';
  * @see [[https://pip-services3-node.github.io/pip-services3-components-node/classes/build.factory.html Factory]]
  * @see [[MemoryMessageQueue]]
  */
-export class MemoryMessageQueueFactory extends Factory implements IConfigurable, IReferenceable {
+export class MemoryMessageQueueFactory extends Factory implements IMessageQueueFactory, IConfigurable, IReferenceable {
     private static readonly MemoryQueueDescriptor: Descriptor = new Descriptor("pip-services", "message-queue", "memory", "*", "1.0");
     private _config: ConfigParams;
     private _references: IReferences;
@@ -27,16 +29,7 @@ export class MemoryMessageQueueFactory extends Factory implements IConfigurable,
         super();
         this.register(MemoryMessageQueueFactory.MemoryQueueDescriptor, (locator: Descriptor) => {
             let name = (typeof locator.getName === "function") ? locator.getName() : null; 
-            let queue = new MemoryMessageQueue(name);
-
-            if (this._config != null) {
-                queue.configure(this._config);
-            }
-            if (this._references != null) {
-                queue.setReferences(this._references);
-            }
-
-            return queue;
+            return this.createQueue(name);
         });
     }
 
@@ -56,5 +49,22 @@ export class MemoryMessageQueueFactory extends Factory implements IConfigurable,
      */
      public setReferences(references: IReferences): void {
         this._references = references;
+    }
+
+    /**
+     * Creates a message queue component and assigns its name.
+     * @param name a name of the created message queue.
+     */
+    public createQueue(name: string): IMessageQueue {
+        let queue = new MemoryMessageQueue(name);
+
+        if (this._config != null) {
+            queue.configure(this._config);
+        }
+        if (this._references != null) {
+            queue.setReferences(this._references);
+        }
+
+        return queue;        
     }
 }

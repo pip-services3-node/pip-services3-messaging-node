@@ -115,6 +115,17 @@ class MessageQueue {
         this.openWithParams(correlationId, connections, credential, callback);
     }
     /**
+     * Opens the component with given connection and credential parameters.
+     *
+     * @param correlationId     (optional) transaction id to trace execution through call chain.
+     * @param connection        connection parameters
+     * @param credential        credential parameters
+     * @param callback 			callback function that receives error or null no errors occured.
+     */
+    openWithParams(correlationId, connections, credential, callback) {
+        throw new Error("Not supported");
+    }
+    /**
      * Checks if the queue has been opened
      * @param correlationId     (optional) transaction id to trace execution through call chain.
      * @returns Error if queue wasn't opened or <code>null</code> otherwise

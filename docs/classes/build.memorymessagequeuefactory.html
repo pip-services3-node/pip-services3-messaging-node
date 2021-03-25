@@ -104,6 +104,7 @@
 			<section class="tsd-panel">
 				<h3>Implements</h3>
 				<ul class="tsd-hierarchy">
+					<li><a href="../interfaces/build.imessagequeuefactory.html" class="tsd-signature-type">IMessageQueueFactory</a></li>
 					<li><span class="tsd-signature-type">any</span></li>
 					<li><span class="tsd-signature-type">any</span></li>
 				</ul>
@@ -122,6 +123,7 @@
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="build.memorymessagequeuefactory.html#configure" class="tsd-kind-icon">configure</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="build.memorymessagequeuefactory.html#createqueue" class="tsd-kind-icon">create<wbr>Queue</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="build.memorymessagequeuefactory.html#setreferences" class="tsd-kind-icon">set<wbr>References</a></li>
 							</ul>
 						</section>
@@ -140,7 +142,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in build/MemoryMessageQueueFactory.ts:21</li>
+									<li>Defined in build/MemoryMessageQueueFactory.ts:23</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -165,7 +167,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in build/MemoryMessageQueueFactory.ts:48</li>
+									<li>Defined in build/MemoryMessageQueueFactory.ts:41</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -187,6 +189,38 @@
 					</ul>
 				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="createqueue" class="tsd-anchor"></a>
+					<h3>create<wbr>Queue</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">create<wbr>Queue<span class="tsd-signature-symbol">(</span>name<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><a href="../interfaces/queues.imessagequeue.html" class="tsd-signature-type">IMessageQueue</a></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<p>Implementation of <a href="../interfaces/build.imessagequeuefactory.html">IMessageQueueFactory</a>.<a href="../interfaces/build.imessagequeuefactory.html#createqueue">createQueue</a></p>
+								<ul>
+									<li>Defined in build/MemoryMessageQueueFactory.ts:58</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Creates a message queue component and assigns its name.</p>
+								</div>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>name: <span class="tsd-signature-type">string</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>a name of the created message queue.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <a href="../interfaces/queues.imessagequeue.html" class="tsd-signature-type">IMessageQueue</a></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="setreferences" class="tsd-anchor"></a>
 					<h3>set<wbr>References</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
@@ -196,7 +230,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in build/MemoryMessageQueueFactory.ts:57</li>
+									<li>Defined in build/MemoryMessageQueueFactory.ts:50</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -256,12 +290,18 @@
 								<a href="build.memorymessagequeuefactory.html#configure" class="tsd-kind-icon">configure</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="build.memorymessagequeuefactory.html#createqueue" class="tsd-kind-icon">create<wbr>Queue</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="build.memorymessagequeuefactory.html#setreferences" class="tsd-kind-icon">set<wbr>References</a>
 							</li>
 						</ul>
 					</li>
 				</ul>
 				<ul class="after-current">
+					<li class=" tsd-kind-interface tsd-parent-kind-external-module">
+						<a href="../interfaces/build.imessagequeuefactory.html" class="tsd-kind-icon">IMessage<wbr>Queue<wbr>Factory</a>
+					</li>
 				</ul>
 			</nav>
 		</div>

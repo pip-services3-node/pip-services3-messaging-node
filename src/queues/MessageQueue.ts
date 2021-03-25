@@ -150,9 +150,11 @@ export abstract class MessageQueue implements IMessageQueue, IReferenceable, ICo
      * @param credential        credential parameters
      * @param callback 			callback function that receives error or null no errors occured.
      */
-    protected abstract openWithParams(correlationId: string,
+     protected openWithParams(correlationId: string,
         connections: ConnectionParams[], credential: CredentialParams,
-        callback: (err: any) => void): void;
+        callback: (err: any) => void): void {
+        throw new Error("Not supported");
+    }   
 
     /**
      * Checks if the queue has been opened

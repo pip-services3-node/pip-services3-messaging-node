@@ -97,7 +97,7 @@ export declare abstract class MessageQueue implements IMessageQueue, IReferencea
      * @param credential        credential parameters
      * @param callback 			callback function that receives error or null no errors occured.
      */
-    protected abstract openWithParams(correlationId: string, connections: ConnectionParams[], credential: CredentialParams, callback: (err: any) => void): void;
+    protected openWithParams(correlationId: string, connections: ConnectionParams[], credential: CredentialParams, callback: (err: any) => void): void;
     /**
      * Checks if the queue has been opened
      * @param correlationId     (optional) transaction id to trace execution through call chain.
