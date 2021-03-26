@@ -89,7 +89,7 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
-								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="connect.imessagequeueconnection.html#getqueuenames" class="tsd-kind-icon">get<wbr>Queue<wbr>Names</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-interface"><a href="connect.imessagequeueconnection.html#readqueuenames" class="tsd-kind-icon">read<wbr>Queue<wbr>Names</a></li>
 							</ul>
 						</section>
 					</div>
@@ -98,10 +98,10 @@
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-interface">
-					<a name="getqueuenames" class="tsd-anchor"></a>
-					<h3>get<wbr>Queue<wbr>Names</h3>
+					<a name="readqueuenames" class="tsd-anchor"></a>
+					<h3>read<wbr>Queue<wbr>Names</h3>
 					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-interface">
-						<li class="tsd-signature tsd-kind-icon">get<wbr>Queue<wbr>Names<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></li>
+						<li class="tsd-signature tsd-kind-icon">read<wbr>Queue<wbr>Names<span class="tsd-signature-symbol">(</span>callback<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">function</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
 					</ul>
 					<ul class="tsd-descriptions">
 						<li class="tsd-description">
@@ -112,12 +112,43 @@
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
-									<p>Gets a list of registered queue names.
+									<p>Reads a list of registered queue names.
 									If connection doesn&#39;t support this function returnes an empty list.</p>
 								</div>
+								<dl class="tsd-comment-tags">
+									<dt>callback</dt>
+									<dd><p>to receive a list with registered queue names or an error.</p>
+									</dd>
+								</dl>
 							</div>
-							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h4>
-							<p>a list with registered queue names.</p>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>callback: <span class="tsd-signature-type">function</span></h5>
+									<ul class="tsd-parameters">
+										<li class="tsd-parameter-siganture">
+											<ul class="tsd-signatures tsd-kind-type-literal tsd-is-not-exported">
+												<li class="tsd-signature tsd-kind-icon"><span class="tsd-signature-symbol">(</span>err<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span>, queueNames<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+											</ul>
+											<ul class="tsd-descriptions">
+												<li class="tsd-description">
+													<h4 class="tsd-parameters-title">Parameters</h4>
+													<ul class="tsd-parameters">
+														<li>
+															<h5>err: <span class="tsd-signature-type">any</span></h5>
+														</li>
+														<li>
+															<h5>queueNames: <span class="tsd-signature-type">string</span><span class="tsd-signature-symbol">[]</span></h5>
+														</li>
+													</ul>
+													<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
 						</li>
 					</ul>
 				</section>
@@ -151,7 +182,7 @@
 						<a href="connect.imessagequeueconnection.html" class="tsd-kind-icon">IMessage<wbr>Queue<wbr>Connection</a>
 						<ul>
 							<li class=" tsd-kind-method tsd-parent-kind-interface">
-								<a href="connect.imessagequeueconnection.html#getqueuenames" class="tsd-kind-icon">get<wbr>Queue<wbr>Names</a>
+								<a href="connect.imessagequeueconnection.html#readqueuenames" class="tsd-kind-icon">read<wbr>Queue<wbr>Names</a>
 							</li>
 						</ul>
 					</li>
