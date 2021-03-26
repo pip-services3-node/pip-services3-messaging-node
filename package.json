@@ -1,6 +1,6 @@
 {
     "name": "pip-services3-messaging-node",
-    "version": "3.2.2",
+    "version": "3.2.3",
     "author": "Conceptual Vision Consulting LLC",
     "description": "Asychronuous messaging components for Pip.Services in Node.js",
     "contributors": [
