@@ -194,8 +194,14 @@ class MemoryMessageQueue extends MessageQueue_1.MessageQueue {
         let messageReceived = false;
         let checkIntervalMs = 100;
         let i = 0;
-        async.whilst(() => {
-            return i < waitTimeout && !messageReceived;
+        async.whilst((callback) => {
+            let result = i < waitTimeout && !messageReceived;
+            if (typeof callback === "function") {
+                callback(result);
+            }
+            else {
+                return result;
+            }
         }, (whilstCallback) => {
             i = i + checkIntervalMs;
             setTimeout(() => {
@@ -388,8 +394,14 @@ class MemoryMessageQueue extends MessageQueue_1.MessageQueue {
         let timeoutInterval = this._listenInterval;
         this._logger.trace(null, "Started listening messages at %s", this.toString());
         this._cancel = false;
-        async.whilst(() => {
-            return !this._cancel;
+        async.whilst((callback) => {
+            let result = !this._cancel;
+            if (typeof callback === "function") {
+                callback(result);
+            }
+            else {
+                return result;
+            }
         }, (whilstCallback) => {
             let message;
             async.series([

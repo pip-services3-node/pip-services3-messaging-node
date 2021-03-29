@@ -216,8 +216,13 @@ export class MemoryMessageQueue extends MessageQueue {
         let checkIntervalMs = 100;
         let i = 0;
         async.whilst(
-            () => {
-                return i < waitTimeout && !messageReceived;
+            (callback) => {
+                let result = i < waitTimeout && !messageReceived;
+                if (typeof callback === "function") {
+                    callback(result);
+                } else {
+                    return result;
+                }
             },
             (whilstCallback) => {
                 i = i + checkIntervalMs;
@@ -421,8 +426,13 @@ export class MemoryMessageQueue extends MessageQueue {
         this._cancel = false;
 
         async.whilst(
-            () => {
-                return !this._cancel;
+            (callback) => {
+                let result = !this._cancel;
+                if (typeof callback === "function") {
+                    callback(result);
+                } else {
+                    return result;
+                }
             },
             (whilstCallback) => {
                 let message: MessageEnvelope;
