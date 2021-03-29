@@ -197,7 +197,7 @@ class MemoryMessageQueue extends MessageQueue_1.MessageQueue {
         async.whilst((callback) => {
             let result = i < waitTimeout && !messageReceived;
             if (typeof callback === "function") {
-                callback(result);
+                callback(null, result);
             }
             else {
                 return result;
@@ -397,7 +397,7 @@ class MemoryMessageQueue extends MessageQueue_1.MessageQueue {
         async.whilst((callback) => {
             let result = !this._cancel;
             if (typeof callback === "function") {
-                callback(result);
+                callback(null, result);
             }
             else {
                 return result;

@@ -219,7 +219,7 @@ export class MemoryMessageQueue extends MessageQueue {
             (callback) => {
                 let result = i < waitTimeout && !messageReceived;
                 if (typeof callback === "function") {
-                    callback(result);
+                    callback(null, result);
                 } else {
                     return result;
                 }
@@ -429,7 +429,7 @@ export class MemoryMessageQueue extends MessageQueue {
             (callback) => {
                 let result = !this._cancel;
                 if (typeof callback === "function") {
-                    callback(result);
+                    callback(null, result);
                 } else {
                     return result;
                 }
