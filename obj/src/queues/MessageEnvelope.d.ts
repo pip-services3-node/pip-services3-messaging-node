@@ -65,6 +65,22 @@ export declare class MessageEnvelope {
      */
     setMessageAsJson(value: any): void;
     /**
+     * @returns the value that was stored in this message
+     *          as a JSON string.
+     *
+     * @see [[setMessageAsJson]]
+     */
+    getMessageAs<T>(): T;
+    /**
+     * Stores the given value as a object.
+     *
+     * @param value     the value to convert to JSON and store in
+     *                  this message.
+     *
+     * @see [[getMessageAsJson]]
+     */
+    setMessageAsObject(value: any): void;
+    /**
      * Convert's this MessageEnvelope to a string, using the following format:
      *
      * <code>"[<correlation_id>,<message_type>,<message.toString>]"</code>.

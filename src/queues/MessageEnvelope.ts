@@ -88,9 +88,7 @@ export class MessageEnvelope {
      * @see [[setMessageAsJson]]
      */
     public getMessageAsJson(): any {
-        if (this.message == null) return null;
-        let temp = this.message.toString();
-        return JSON.parse(temp);
+        return this.getMessageAs();
     }
 
     /**
@@ -102,6 +100,30 @@ export class MessageEnvelope {
      * @see [[getMessageAsJson]]
      */
     public setMessageAsJson(value: any): void {
+        this.setMessageAsObject(value);
+    }
+
+    /**
+     * @returns the value that was stored in this message 
+     *          as a JSON string.
+     * 
+     * @see [[setMessageAsJson]]
+     */
+     public getMessageAs<T>(): T {
+        if (this.message == null) return null;
+        let temp = this.message.toString();
+        return JSON.parse(temp);
+    }
+
+    /**
+     * Stores the given value as a object.
+     * 
+     * @param value     the value to convert to JSON and store in 
+     *                  this message.
+     * 
+     * @see [[getMessageAsJson]]
+     */
+    public setMessageAsObject(value: any): void {
         if (value == null) {
             this.message = null;
         } else {
