@@ -5,6 +5,7 @@
 ### Features
 * **queues** Added JSON serialization for MessageEnvelop
 * **build** Added IMessageQueueFactory interface
+* **test** Added TestMessageReceiver class to simplify testing of asynchronous messaging
 
 ## <a name="3.1.0"></a> 3.1.0 (2021-03-23)
 
