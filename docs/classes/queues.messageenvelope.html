@@ -108,10 +108,12 @@
 						<section class="tsd-index-section ">
 							<h3>Methods</h3>
 							<ul class="tsd-index-list">
+								<li class="tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter"><a href="queues.messageenvelope.html#getmessageas" class="tsd-kind-icon">get<wbr>Message<wbr>As</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#getmessageasjson" class="tsd-kind-icon">get<wbr>Message<wbr>AsJson</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#getmessageasstring" class="tsd-kind-icon">get<wbr>Message<wbr>AsString</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#getreference" class="tsd-kind-icon">get<wbr>Reference</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#setmessageasjson" class="tsd-kind-icon">set<wbr>Message<wbr>AsJson</a></li>
+								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#setmessageasobject" class="tsd-kind-icon">set<wbr>Message<wbr>AsObject</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#setmessageasstring" class="tsd-kind-icon">set<wbr>Message<wbr>AsString</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#setreference" class="tsd-kind-icon">set<wbr>Reference</a></li>
 								<li class="tsd-kind-method tsd-parent-kind-class"><a href="queues.messageenvelope.html#tojson" class="tsd-kind-icon">toJSON</a></li>
@@ -255,6 +257,38 @@
 			</section>
 			<section class="tsd-panel-group tsd-member-group ">
 				<h2>Methods</h2>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+					<a name="getmessageas" class="tsd-anchor"></a>
+					<h3>get<wbr>Message<wbr>As</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+						<li class="tsd-signature tsd-kind-icon">get<wbr>Message<wbr>As&lt;T&gt;<span class="tsd-signature-symbol">(</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">T</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in queues/MessageEnvelope.ts:112</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="queues.messageenvelope.html#setmessageasjson">setMessageAsJson</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-type-parameters-title">Type parameters</h4>
+							<ul class="tsd-type-parameters">
+								<li>
+									<h4>T</h4>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">T</span></h4>
+							<p>the value that was stored in this message
+							as a JSON string.</p>
+						</li>
+					</ul>
+				</section>
 				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
 					<a name="getmessageasjson" class="tsd-anchor"></a>
 					<h3>get<wbr>Message<wbr>AsJson</h3>
@@ -331,12 +365,49 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageEnvelope.ts:104</li>
+									<li>Defined in queues/MessageEnvelope.ts:102</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
 								<div class="lead">
 									<p>Stores the given value as a JSON string.</p>
+								</div>
+								<dl class="tsd-comment-tags">
+									<dt>see</dt>
+									<dd><p><a href="queues.messageenvelope.html#getmessageasjson">getMessageAsJson</a></p>
+									</dd>
+								</dl>
+							</div>
+							<h4 class="tsd-parameters-title">Parameters</h4>
+							<ul class="tsd-parameters">
+								<li>
+									<h5>value: <span class="tsd-signature-type">any</span></h5>
+									<div class="tsd-comment tsd-typography">
+										<p>the value to convert to JSON and store in
+										this message.</p>
+									</div>
+								</li>
+							</ul>
+							<h4 class="tsd-returns-title">Returns <span class="tsd-signature-type">void</span></h4>
+						</li>
+					</ul>
+				</section>
+				<section class="tsd-panel tsd-member tsd-kind-method tsd-parent-kind-class">
+					<a name="setmessageasobject" class="tsd-anchor"></a>
+					<h3>set<wbr>Message<wbr>AsObject</h3>
+					<ul class="tsd-signatures tsd-kind-method tsd-parent-kind-class">
+						<li class="tsd-signature tsd-kind-icon">set<wbr>Message<wbr>AsObject<span class="tsd-signature-symbol">(</span>value<span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">any</span><span class="tsd-signature-symbol">)</span><span class="tsd-signature-symbol">: </span><span class="tsd-signature-type">void</span></li>
+					</ul>
+					<ul class="tsd-descriptions">
+						<li class="tsd-description">
+							<aside class="tsd-sources">
+								<ul>
+									<li>Defined in queues/MessageEnvelope.ts:126</li>
+								</ul>
+							</aside>
+							<div class="tsd-comment tsd-typography">
+								<div class="lead">
+									<p>Stores the given value as a object.</p>
 								</div>
 								<dl class="tsd-comment-tags">
 									<dt>see</dt>
@@ -431,7 +502,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageEnvelope.ts:138</li>
+									<li>Defined in queues/MessageEnvelope.ts:160</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -455,7 +526,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageEnvelope.ts:122</li>
+									<li>Defined in queues/MessageEnvelope.ts:144</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -480,7 +551,7 @@
 						<li class="tsd-description">
 							<aside class="tsd-sources">
 								<ul>
-									<li>Defined in queues/MessageEnvelope.ts:157</li>
+									<li>Defined in queues/MessageEnvelope.ts:179</li>
 								</ul>
 							</aside>
 							<div class="tsd-comment tsd-typography">
@@ -531,6 +602,9 @@
 			<nav class="tsd-navigation secondary menu-sticky">
 				<ul class="before-current">
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
+						<a href="queues.cachedmessagequeue.html" class="tsd-kind-icon">Cached<wbr>Message<wbr>Queue</a>
+					</li>
+					<li class=" tsd-kind-class tsd-parent-kind-external-module">
 						<a href="queues.callbackmessagereceiver.html" class="tsd-kind-icon">Callback<wbr>Message<wbr>Receiver</a>
 					</li>
 					<li class=" tsd-kind-class tsd-parent-kind-external-module">
@@ -562,6 +636,9 @@
 							<li class=" tsd-kind-property tsd-parent-kind-class">
 								<a href="queues.messageenvelope.html#sent_time" class="tsd-kind-icon">sent_<wbr>time</a>
 							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class tsd-has-type-parameter">
+								<a href="queues.messageenvelope.html#getmessageas" class="tsd-kind-icon">get<wbr>Message<wbr>As</a>
+							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="queues.messageenvelope.html#getmessageasjson" class="tsd-kind-icon">get<wbr>Message<wbr>AsJson</a>
 							</li>
@@ -573,6 +650,9 @@
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="queues.messageenvelope.html#setmessageasjson" class="tsd-kind-icon">set<wbr>Message<wbr>AsJson</a>
+							</li>
+							<li class=" tsd-kind-method tsd-parent-kind-class">
+								<a href="queues.messageenvelope.html#setmessageasobject" class="tsd-kind-icon">set<wbr>Message<wbr>AsObject</a>
 							</li>
 							<li class=" tsd-kind-method tsd-parent-kind-class">
 								<a href="queues.messageenvelope.html#setmessageasstring" class="tsd-kind-icon">set<wbr>Message<wbr>AsString</a>

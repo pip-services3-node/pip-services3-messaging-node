@@ -9,3 +9,4 @@ export { MessagingCapabilities } from './MessagingCapabilities';
 export { MessageQueue } from './MessageQueue';
 export { MemoryMessageQueue } from './MemoryMessageQueue';
 export { CallbackMessageReceiver } from './CallbackMessageReceiver';
+export { CachedMessageQueue } from './CachedMessageQueue';
